@@ -3,8 +3,11 @@ import { getStorage, ref, uploadBytes } from "firebase/storage";
 import app from "../firebaseConfig";
 import { useState } from "react";
 
-export const VoiceRecord = () => {
-  const [name, setName] = useState("name");
+interface VoiceRecordProps {
+  name: string;
+}
+
+const VoiceRecord = ({ name }: VoiceRecordProps) => {
   const storage = getStorage(app);
 
   const addAudioElement = (blob: Blob) => {
@@ -26,3 +29,5 @@ export const VoiceRecord = () => {
     </div>
   );
 };
+
+export default VoiceRecord;

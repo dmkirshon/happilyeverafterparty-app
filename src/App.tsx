@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { VoiceRecord } from "./components/VoiceRecord";
 import ErrorPage from "./ErrorPage";
 import Home from "./routes/Home";
 import VoiceBox from "./routes/VoiceBox";
@@ -10,7 +9,15 @@ function App() {
     { path: "/voice-box", element: <VoiceBox /> },
   ]);
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
+      }}
+    >
       <RouterProvider router={router} />
     </div>
   );
