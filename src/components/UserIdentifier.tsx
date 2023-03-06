@@ -24,7 +24,7 @@ const UserIdentifier = ({
         }}
       >
         <label>
-          Name:{" "}
+          Name
           <input
             type="text"
             value={name}
