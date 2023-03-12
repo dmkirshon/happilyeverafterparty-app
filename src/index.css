@@ -46,7 +46,7 @@ a:visited {
 .background_top {
   height: 30vh;
   width: 100vw;
-  background-image: url(./assets/4.png);
+  background-image: url(./assets/background-top.webp);
   background-repeat: repeat-x;
   background-size: cover;
 }
@@ -54,7 +54,7 @@ a:visited {
 .background_bottom {
   height: 30vh;
   width: 100vw;
-  background-image: url(./assets/5.png);
+  background-image: url(./assets/background-bottom.webp);
   background-size: cover;
   background-repeat: repeat-x;
   background-position: bottom;
