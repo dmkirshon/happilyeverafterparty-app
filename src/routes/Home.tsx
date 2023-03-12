@@ -9,6 +9,9 @@ export default function Home() {
       <Link className="home_link link_navigation" to="voice-box">
         Leave a Voice Message
       </Link>
+      <Link to="https://weduploader.com/upload/O0H3empAUgXVCoxQ">
+        Upload Photos
+      </Link>
       <footer className="home_footer">
         <p>Designed by Devon</p>
         <p>Created by David</p>
