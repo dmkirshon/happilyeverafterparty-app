@@ -13,28 +13,21 @@ const UserIdentifier = ({
   handleSubmitName,
 }: UserIdentifierProps) => {
   return (
-    <div>
-      <Form
-        onSubmit={handleSubmitName}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <label>
-          Name
-          <input
-            type="text"
-            value={name}
-            required
-            onChange={handleNameFieldUpdate}
-          ></input>
-        </label>
-        <button type="submit">Submit</button>
-      </Form>
-    </div>
+    <Form className="user-identifier_form" onSubmit={handleSubmitName}>
+      <label className="user-identifier_label-name">
+        Name:
+        <input
+          className="user-identifier_input-name"
+          type="text"
+          value={name}
+          required
+          onChange={handleNameFieldUpdate}
+        ></input>
+      </label>
+      <button className="user-identifier_submit" type="submit">
+        Submit
+      </button>
+    </Form>
   );
 };
 

@@ -1,7 +1,6 @@
 import { AudioRecorder } from "react-audio-voice-recorder";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import app from "../firebaseConfig";
-import { useState } from "react";
 
 interface VoiceRecordProps {
   name: string;
@@ -25,7 +24,10 @@ const VoiceRecord = ({ name }: VoiceRecordProps) => {
 
   return (
     <div>
-      <AudioRecorder onRecordingComplete={addAudioElement} />
+      <h2>Click to Start Voice Record</h2>
+      <div className="voice-box_recorder">
+        <AudioRecorder onRecordingComplete={addAudioElement} />
+      </div>
     </div>
   );
 };

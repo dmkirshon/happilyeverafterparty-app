@@ -13,6 +13,21 @@
   src: url(fonts/Better\ Saturday.otf);
 }
 
+:root {
+  /* colors */
+  --light: #ffecd2;
+
+  /* fonts */
+  --fancy-font: "Better Saturday", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  --plain-font: "Lato", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --soul-font: "Brown Sugar", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
 html {
   box-sizing: border-box;
   /* TODO font main lato, header better saturday, header brown sugar */
@@ -35,14 +50,17 @@ html {
 
 a {
   text-decoration: none;
-  color: #ffecd2;
-  font-size: 32px;
+  color: var(--light);
+  font-size: 24px;
 }
 
 a:visited {
-  color: #ffecd2;
+  color: var(--light);
 }
 
+h2 {
+  font-size: 1rem;
+}
 /* App style  */
 
 .App {
@@ -50,7 +68,7 @@ a:visited {
   min-width: 100vw;
   min-height: 100vh;
   background-color: black;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   overflow: clip;
@@ -105,6 +123,8 @@ a:visited {
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  flex-grow: 1;
 }
 
 /* VoiceBox page style */
@@ -112,6 +132,86 @@ a:visited {
 .voice-box_container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.voice-box_title {
+  font-size: 48px;
+}
+
+.voice-box_recorder {
+  display: flex;
   justify-content: center;
   align-items: center;
+  color: black;
+  font-family: var(--plain-font);
+}
+
+/* User Identifier component style */
+.user-identifier_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-identifier_label-name {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  text-align: center;
+}
+.user-identifier_input-name {
+  font-size: 2rem;
+  padding: 8px 8px;
+  margin: 1rem;
+  background-color: var(--light);
+  font-family: var(--plain-font);
+  border-radius: 5rem;
+  text-align: center;
+  box-shadow: 0px 0px 5px 5px var(--light);
+  border: none;
+}
+
+.user-identifier_input-name:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 0px 5px var(--light);
+}
+
+.user-identifier_submit {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  background-color: var(--light);
+  font-family: var(--plain-font);
+  border-radius: 5rem;
+  text-align: center;
+  box-shadow: 0px 0px 5px 5px var(--light);
+  border: none;
+  cursor: pointer;
+}
+
+.user-identifier_submit:hover {
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 0px 5px var(--light);
+}
+
+@media only screen and (max-width: 900px) {
+  .user-identifier_label-name {
+    font-size: 1.5rem;
+  }
+  .user-identifier_input-name {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .user-identifier_submit {
+    font-size: 1rem;
+  }
 }

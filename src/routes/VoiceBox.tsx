@@ -20,8 +20,7 @@ export default function Home() {
 
   return (
     <div className="voice-box_container">
-      <h1>Welcome</h1>
-      <Link to="/">Back to main page</Link>
+      <h1 className="voice-box_title">Voice Box</h1>
       {!isFormSubmitted ? (
         <UserIdentifier
           name={name}
@@ -31,6 +30,8 @@ export default function Home() {
       ) : (
         <VoiceRecord name={name} />
       )}
+
+      <Link to="/">Back to main page</Link>
     </div>
   );
 }
