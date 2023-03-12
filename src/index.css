@@ -43,6 +43,18 @@ a:visited {
   color: #ffecd2;
 }
 
+/* App style  */
+
+.App {
+  display: flex;
+  min-width: "100vw";
+  min-height: "100vh";
+  background-color: "black";
+  justify-content: "space-between";
+  align-items: "center";
+  flex-direction: "column";
+  overflow: "clip";
+}
 .background_top {
   height: 30vh;
   width: 100vw;
@@ -84,4 +96,21 @@ a:visited {
     height: 25vh;
     width: 100vw;
   }
+}
+
+/* Home page style */
+
+.home_container {
+  display: "flex";
+  align-items: "center";
+  flex-direction: "column";
+}
+
+/* VoiceBox page style */
+
+.voice-box_container {
+  display: "flex";
+  flex-direction: "column";
+  justify-content: "center";
+  align-items: "center";
 }
