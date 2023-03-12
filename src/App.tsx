@@ -9,19 +9,7 @@ function App() {
     { path: "/voice-box", element: <VoiceBox /> },
   ]);
   return (
-    <div
-      className="App"
-      style={{
-        display: "flex",
-        minWidth: "100vw",
-        minHeight: "100vh",
-        backgroundColor: "black",
-        justifyContent: "space-between",
-        alignItems: "center",
-        flexDirection: "column",
-        overflow: "clip",
-      }}
-    >
+    <div className="App">
       <div className="background_top"></div>
       <RouterProvider router={router} />
       <div className="background_bottom"></div>

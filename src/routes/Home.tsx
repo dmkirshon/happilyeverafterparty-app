@@ -2,20 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div
-      style={{
-        // background: `#000 url(${background}) no-repeat center`,
-        // backgroundRepeat: "no-repeat",
-        // backgroundPosition: "center center",
-        // backgroundAttachment: "fixed",
-        // backgroundSize: "contain",
-        backgroundColor: "black",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
+    <div className="home_container">
       <h1 className="home_title" style={{ fontSize: "72px" }}>
         Welcome
       </h1>

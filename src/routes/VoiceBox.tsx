@@ -19,15 +19,7 @@ export default function Home() {
   };
 
   return (
-    <div
-      style={{
-        border: "1px solid black",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="voice-box_container">
       <h1>Welcome</h1>
       <Link to="/">Back to main page</Link>
       {!isFormSubmitted ? (
