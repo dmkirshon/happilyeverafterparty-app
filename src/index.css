@@ -76,12 +76,12 @@ a:visited {
 
 @media only screen and (max-width: 900px) {
   .background_top {
-    height: 30vh;
+    height: 25vh;
     width: 100vw;
   }
 
   .background_bottom {
-    height: 30vh;
+    height: 25vh;
     width: 100vw;
   }
 }
