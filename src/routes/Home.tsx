@@ -1,25 +1,31 @@
 import { Link } from "react-router-dom";
-import background from "../assets/3.png";
 
 export default function Home() {
   return (
     <div
       style={{
-        minWidth: "100vw",
-        minHeight: "100vh",
-        background: `#000 url(${background}) no-repeat center`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
-        backgroundAttachment: "fixed",
-        backgroundSize: "contain",
+        // background: `#000 url(${background}) no-repeat center`,
+        // backgroundRepeat: "no-repeat",
+        // backgroundPosition: "center center",
+        // backgroundAttachment: "fixed",
+        // backgroundSize: "contain",
+        backgroundColor: "black",
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "space-between",
         alignItems: "center",
         flexDirection: "column",
       }}
     >
-      <h1 style={{ fontSize: "72px" }}>Welcome</h1>
-      <Link to="voice-box">Leave a Voice Message</Link>
+      <h1 className="home_title" style={{ fontSize: "72px" }}>
+        Welcome
+      </h1>
+      <Link className="home_link link_navigation" to="voice-box">
+        Leave a Voice Message
+      </Link>
+      <footer className="home_footer">
+        <p>Designed by Devon</p>
+        <p>Created by David</p>
+      </footer>
     </div>
   );
 }

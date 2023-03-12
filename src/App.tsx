@@ -13,12 +13,18 @@ function App() {
       className="App"
       style={{
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        minWidth: "100vw",
         minHeight: "100vh",
+        backgroundColor: "black",
+        justifyContent: "space-between",
+        alignItems: "center",
+        flexDirection: "column",
+        overflow: "clip",
       }}
     >
+      <div className="background_top"></div>
       <RouterProvider router={router} />
+      <div className="background_bottom"></div>
     </div>
   );
 }

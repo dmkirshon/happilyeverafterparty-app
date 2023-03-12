@@ -36,9 +36,52 @@ html {
 a {
   text-decoration: none;
   color: #ffecd2;
-  font-size: 48px;
+  font-size: 32px;
 }
 
 a:visited {
   color: #ffecd2;
+}
+
+.background_top {
+  height: 30vh;
+  width: 100vw;
+  background-image: url(./assets/4.png);
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+
+.background_bottom {
+  height: 30vh;
+  width: 100vw;
+  background-image: url(./assets/5.png);
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+@media only screen and (min-width: 1500px) {
+  .background_top {
+    height: 30vh;
+    width: 100vw;
+    background-size: contain;
+  }
+
+  .background_bottom {
+    height: 30vh;
+    width: 100vw;
+    background-size: contain;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .background_top {
+    height: 30vh;
+    width: 100vw;
+  }
+
+  .background_bottom {
+    height: 30vh;
+    width: 100vw;
+  }
 }
