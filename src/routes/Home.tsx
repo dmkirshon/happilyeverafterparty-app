@@ -16,6 +16,9 @@ export default function Home() {
           ~ Share Moments ~
           <p className="link_subtitle">Upload photos and videos of the night</p>
         </Link>
+        <Link className="link_nav" to="faqs">
+          ~ FAQs ~<p className="link_subtitle">Frequently asked questions</p>
+        </Link>
       </div>
     </div>
   );
