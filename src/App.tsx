@@ -12,6 +12,10 @@ function App() {
     <div className="App">
       <div className="background_top"></div>
       <RouterProvider router={router} />
+      <footer className="app_footer">
+        <p>Designed by Devon</p>
+        <p>Crafted by David</p>
+      </footer>
       <div className="background_bottom"></div>
     </div>
   );
