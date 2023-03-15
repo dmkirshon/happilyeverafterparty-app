@@ -14,7 +14,9 @@ export default function Home() {
           to="https://weduploader.com/upload/O0H3empAUgXVCoxQ"
         >
           ~ Share Moments ~
-          <p className="link_subtitle">Upload photos and videos of the night</p>
+          <p className="link_subtitle">
+            Upload photos and videos of the night (External Site)
+          </p>
         </Link>
         <Link className="link_nav" to="faqs">
           ~ FAQs ~<p className="link_subtitle">Frequently asked questions</p>
