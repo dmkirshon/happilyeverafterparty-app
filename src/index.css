@@ -69,12 +69,19 @@ button {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 900px) {
+  button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
 /* App style  */
 
 .App {
-  display: flex;
   min-width: 100vw;
   min-height: 100vh;
+  display: flex;
   background-color: black;
   justify-content: space-between;
   align-items: center;
@@ -125,14 +132,8 @@ button {
 }
 
 @media only screen and (max-width: 900px) {
-  .background_top {
-    height: 25vh;
-    width: 100vw;
-  }
-
-  .background_bottom {
-    height: 25vh;
-    width: 100vw;
+  .app_footer {
+    font-size: 0.7rem;
   }
 }
 
@@ -165,10 +166,20 @@ button {
 }
 
 @media only screen and (max-width: 900px) {
+  .home_container {
+    padding: 20vh 0 10vh 0;
+  }
   .home_title {
+    font-size: 8vh;
+  }
+  .home_links {
+    padding-top: 2vh;
   }
   .link_nav {
-    font-size: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .link_subtitle {
+    font-size: 0.7rem;
   }
 }
 
@@ -262,6 +273,21 @@ button {
   color: var(--light);
 }
 
+@media only screen and (max-width: 900px) {
+  .voice-box_header {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .voice-box_title {
+    font-size: 2.5rem;
+  }
+
+  .voice-box_recorder_heading {
+    padding-bottom: 2rem;
+    font-size: 1rem;
+  }
+}
+
 /* User Identifier component style */
 .user-identifier_form {
   display: flex;
@@ -280,12 +306,11 @@ button {
 }
 .user-identifier_input-name {
   font-size: 2rem;
-  padding: 8px 8px;
-  margin: 1rem;
+  padding: 1rem 1rem;
+  margin: 0.5rem;
   background-color: var(--light);
   font-family: var(--plain-font);
   border-radius: 5rem;
-  text-align: center;
   border: none;
 }
 
@@ -304,8 +329,9 @@ button {
     font-size: 1.5rem;
   }
   .user-identifier_input-name {
-    font-size: 1rem;
-    padding: 0;
+    font-size: 1.3rem;
+    padding: 0.5rem 0;
+    padding-left: 2rem;
   }
   .user-identifier_submit {
     font-size: 1rem;
@@ -369,10 +395,41 @@ button {
   z-index: 1;
 }
 
-/* details[open] summary ~ * {
-  animation: sweep .5s ease-in-out;
+@media only screen and (max-width: 900px) {
+  .faqs_header {
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+  .faqs_title {
+    font-family: var(--fancy-font);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+  }
+
+  .faqs_link_home {
+    padding: 4px 6px 6px 6px;
+    font-size: 1rem;
+    border: 1px solid var(--light);
+    border-radius: 10px;
+  }
+  .faqs_questions {
+    padding: 0 15vw;
+    padding-bottom: 3rem;
+  }
+
+  .faqs_question {
+    padding-bottom: 2rem;
+  }
+
+  .question {
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+
+  .answer {
+    font-style: italic;
+    padding-top: 1rem;
+    user-select: none;
+    font-size: 1rem;
+  }
 }
-@keyframes sweep {
-  0%    {opacity: 0; margin-top: -10px}
-  100%  {opacity: 1; margin-top: 0px}
-} */

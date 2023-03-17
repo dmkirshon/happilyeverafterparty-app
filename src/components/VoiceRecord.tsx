@@ -18,7 +18,7 @@ const VoiceRecord = ({ name }: VoiceRecordProps) => {
     isPaused,
     recordingTime,
   } = useAudioRecorder();
-  const [isRecordingNoteSaved, setisRecordingNoteSaved] = useState(false);
+  const [isRecordingNoteSaved, setIsRecordingNoteSaved] = useState(false);
 
   const uploadVoiceNote = () => {
     const audioRef = ref(storage, `audio/${name}-${new Date().valueOf()}`);
@@ -40,29 +40,29 @@ const VoiceRecord = ({ name }: VoiceRecordProps) => {
 
   return (
     <div className="voice-recorder">
-      <h2 className="voice-box_recorder_heading">
-        Click Below to Begin Recording Voice
-      </h2>
+      {!isRecording && (
+        <h2 className="voice-box_recorder_heading">
+          Click Below to Begin Recording Voice
+        </h2>
+      )}
       <div className="voice-box_recorder">
         {!isRecording && (
           <div className="recording_upload">
             <button className="voice-box_record" onClick={startRecording}>
               {recordingBlob ? "Re-record Voice Note" : "Record Voice Note"}
             </button>
-            {recordingBlob && (
+            {recordingBlob && isRecordingNoteSaved && (
               <div className="recording_upload">
                 <button className="upload_button" onClick={uploadVoiceNote}>
                   Upload Voice Note
                 </button>
-                {isRecordingNoteSaved && (
-                  <div className="upload_preview">
-                    Listen to your recording:
-                    <audio
-                      controls
-                      src={URL.createObjectURL(recordingBlob!)}
-                    ></audio>
-                  </div>
-                )}
+                <div className="upload_preview">
+                  Listen to your recording:
+                  <audio
+                    controls
+                    src={URL.createObjectURL(recordingBlob!)}
+                  ></audio>
+                </div>
               </div>
             )}
           </div>
@@ -72,7 +72,7 @@ const VoiceRecord = ({ name }: VoiceRecordProps) => {
             <button
               className=""
               onClick={() => {
-                setisRecordingNoteSaved(true);
+                setIsRecordingNoteSaved(true);
                 stopRecording();
               }}
             >
@@ -81,7 +81,7 @@ const VoiceRecord = ({ name }: VoiceRecordProps) => {
             <button
               className=""
               onClick={() => {
-                setisRecordingNoteSaved(false);
+                setIsRecordingNoteSaved(false);
                 stopRecording();
               }}
             >
