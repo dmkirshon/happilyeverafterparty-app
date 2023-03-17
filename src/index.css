@@ -1,5 +1,4 @@
 /* General Style */
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 @font-face {
   font-family: "Lato";
   src: url(fonts/Lato-Regular.ttf);
@@ -234,6 +233,13 @@ button {
   gap: 2rem;
 }
 
+.voice-box_record {
+}
+
+.upload_done {
+  text-align: center;
+}
+
 .upload_preview {
   display: flex;
   flex-direction: column;
@@ -285,6 +291,7 @@ button {
   .voice-box_recorder_heading {
     padding-bottom: 2rem;
     font-size: 1rem;
+    text-align: center;
   }
 }
 
@@ -306,12 +313,14 @@ button {
 }
 .user-identifier_input-name {
   font-size: 2rem;
-  padding: 1rem 1rem;
+  padding: 1rem 0;
   margin: 0.5rem;
   background-color: var(--light);
   font-family: var(--plain-font);
   border-radius: 5rem;
   border: none;
+
+  padding-left: 4rem;
 }
 
 .user-identifier_submit {

@@ -19,13 +19,20 @@ const VoiceRecord = ({ name }: VoiceRecordProps) => {
     recordingTime,
   } = useAudioRecorder();
   const [isRecordingNoteSaved, setIsRecordingNoteSaved] = useState(false);
+  const [isUploaded, setIsUploaded] = useState(false);
 
   const uploadVoiceNote = () => {
-    const audioRef = ref(storage, `audio/${name}-${new Date().valueOf()}`);
+    const audioRef = ref(
+      storage,
+      `audio/${name}/${name}-${new Date().valueOf()}`
+    );
     uploadBytes(audioRef, recordingBlob!).then((snapshot) => {
       console.log("Uploaded a blob or file!");
     });
+
+    setIsUploaded(true);
   };
+
   const timeFormat = (time: number) => {
     const isExtraZeroSecondsNeeded = time % 60 < 10;
     const secondsFormatted = isExtraZeroSecondsNeeded
@@ -48,14 +55,26 @@ const VoiceRecord = ({ name }: VoiceRecordProps) => {
       <div className="voice-box_recorder">
         {!isRecording && (
           <div className="recording_upload">
-            <button className="voice-box_record" onClick={startRecording}>
+            <button
+              className="voice-box_record"
+              onClick={() => {
+                setIsUploaded(false);
+                startRecording();
+              }}
+            >
               {recordingBlob ? "Re-record Voice Note" : "Record Voice Note"}
             </button>
             {recordingBlob && isRecordingNoteSaved && (
               <div className="recording_upload">
-                <button className="upload_button" onClick={uploadVoiceNote}>
-                  Upload Voice Note
-                </button>
+                {isUploaded ? (
+                  <p className="upload_done">
+                    Thank You! Your Upload has been submitted!
+                  </p>
+                ) : (
+                  <button className="upload_button" onClick={uploadVoiceNote}>
+                    Upload Voice Note
+                  </button>
+                )}
                 <div className="upload_preview">
                   Listen to your recording:
                   <audio
