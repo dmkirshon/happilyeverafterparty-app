@@ -58,6 +58,17 @@ a:visited {
   color: var(--light);
 }
 
+button {
+  padding: 16px 16px 16px 16px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 1px solid var(--light);
+  border-radius: 10px;
+  background-color: black;
+  color: var(--light);
+  cursor: pointer;
+}
+
 /* App style  */
 
 .App {
@@ -166,10 +177,10 @@ a:visited {
 .voice-box_container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: top;
   align-items: center;
   flex-grow: 1;
-  padding: 24vh 0 25vh 0;
+  padding: 23vh 0 5vh 0;
 }
 .voice-box_header {
   text-align: center;
@@ -186,12 +197,69 @@ a:visited {
   border-radius: 10px;
 }
 
+.voice-recorder {
+  padding-top: 2rem;
+  font-family: var(--plain-font);
+}
+.voice-box_recorder_heading {
+  padding-bottom: 2rem;
+}
 .voice-box_recorder {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
-  font-family: var(--plain-font);
+}
+
+.voice-box_recording {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.recording_upload {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.upload_preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.recording_status {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.recording_icon {
+  width: 1rem;
+  height: 1rem;
+  background-color: red;
+  animation: blink 2.5s infinite ease-in-out;
+  border-radius: 50%;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+.recording_time {
+  color: var(--light);
 }
 
 /* User Identifier component style */
@@ -226,11 +294,8 @@ a:visited {
   font-weight: bolder;
   padding: 0.5rem 1rem;
   margin: 1rem;
-  background-color: var(--light);
-  font-family: var(--plain-font);
   border-radius: 5rem;
   text-align: center;
-  border: none;
   cursor: pointer;
 }
 
