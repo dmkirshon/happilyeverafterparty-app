@@ -324,7 +324,7 @@ button {
 }
 .faqs_header {
   text-align: center;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 }
 .faqs_title {
   font-family: var(--fancy-font);
@@ -340,21 +340,23 @@ button {
 }
 
 .faqs_questions {
-  padding: 0 30vw;
+  padding: 0 25vw;
   padding-bottom: 3rem;
 }
 
 .faqs_question {
-  list-style: none;
-
   padding-bottom: 2rem;
 }
 
 .question {
+  cursor: pointer;
   font-size: 2rem;
 }
 
 .answer {
+  font-style: italic;
+  padding-top: 1rem;
+  user-select: none;
 }
 
 .faqs_link_title {
