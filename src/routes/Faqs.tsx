@@ -26,7 +26,8 @@ export default function Faqs() {
         <li className="faqs_question">
           <p className="question">Why are you doing it like this??</p>
           <p className="answer">
-            Because shit’s expensive and we aren’t paying to feed y’all twice.
+            Because shizzz is expensive and we aren’t paying to feed y’all
+            twice.
           </p>
         </li>
         <li className="faqs_question">
