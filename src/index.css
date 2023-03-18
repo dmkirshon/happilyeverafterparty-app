@@ -233,10 +233,8 @@ button {
   gap: 2rem;
 }
 
-.voice-box_record {
-}
-
-.upload_done {
+.upload_done,
+.upload_progress {
   text-align: center;
 }
 

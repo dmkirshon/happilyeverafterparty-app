@@ -20,16 +20,16 @@ const VoiceRecord = ({ name }: VoiceRecordProps) => {
   } = useAudioRecorder();
   const [isRecordingNoteSaved, setIsRecordingNoteSaved] = useState(false);
   const [isUploaded, setIsUploaded] = useState(false);
+  const [isUploadInProgress, setIsUploadInProgress] = useState(false);
 
-  const uploadVoiceNote = () => {
+  const uploadVoiceNote = async () => {
     const audioRef = ref(
       storage,
       `audio/${name}/${name}-${new Date().valueOf()}`
     );
-    uploadBytes(audioRef, recordingBlob!).then((snapshot) => {
-      console.log("Uploaded a blob or file!");
-    });
-
+    const uploadResult = await uploadBytes(audioRef, recordingBlob!);
+    console.log(uploadResult);
+    setIsUploadInProgress(false);
     setIsUploaded(true);
   };
 
@@ -67,11 +67,23 @@ const VoiceRecord = ({ name }: VoiceRecordProps) => {
             {recordingBlob && isRecordingNoteSaved && (
               <div className="recording_upload">
                 {isUploaded ? (
-                  <p className="upload_done">
-                    Thank You! Your Upload has been submitted!
-                  </p>
+                  <div className="upload_done">
+                    {!isUploadInProgress
+                      ? "Thank You! Your Upload has been submitted!"
+                      : "Uploading Now, Please Do Not Leave Page"}
+                  </div>
+                ) : isUploadInProgress ? (
+                  <div className="upload_progress">
+                    Uploading Now, Please Do Not Leave Page
+                  </div>
                 ) : (
-                  <button className="upload_button" onClick={uploadVoiceNote}>
+                  <button
+                    className="upload_button"
+                    onClick={() => {
+                      setIsUploadInProgress(true);
+                      uploadVoiceNote();
+                    }}
+                  >
                     Upload Voice Note
                   </button>
                 )}
