@@ -470,8 +470,24 @@ button {
 
 .photo-gallery_wrapper {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding-bottom: 3rem;
+  gap: 1rem;
+  padding: 5vh 10vw 10vh 10vw;
+}
+
+.photo-gallery_image {
+  width: 15vw;
+  height: 15vw;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .photo-gallery_image {
+    width: 20vw;
+    height: 20vw;
+  }
 }

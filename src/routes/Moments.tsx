@@ -1,15 +1,26 @@
 import { Link } from "react-router-dom";
 import PhotoGallery from "../components/PhotoGallery";
 import { useEffect, useState } from "react";
-import { getDownloadURL, getStorage, listAll, ref } from "firebase/storage";
+import {
+  StorageReference,
+  getDownloadURL,
+  getStorage,
+  listAll,
+  ref,
+} from "firebase/storage";
 import app from "../firebaseConfig";
+
+interface ImageProp {
+  imageRef: StorageReference;
+  url: string;
+}
 
 export default function Moments() {
   const storage = getStorage(app);
 
-  const storageRef = ref(storage, "images/");
+  const storageRef = ref(storage, "images/small/");
 
-  const [allImages, setAllImages] = useState<Array<string>>([]);
+  const [allImages, setAllImages] = useState<Array<ImageProp>>([]);
 
   // take Firebase storage photos and convert to HTMLImageElement
   useEffect(() => {
@@ -18,7 +29,7 @@ export default function Moments() {
       .then((result) => {
         result.items.forEach((imageRef) => {
           getDownloadURL(imageRef).then((url) => {
-            setAllImages((allImages) => [...allImages, url]);
+            setAllImages((allImages) => [...allImages, { imageRef, url }]);
           });
         });
       })
