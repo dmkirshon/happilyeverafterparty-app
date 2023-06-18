@@ -9,14 +9,9 @@ export default function Home() {
           ~ Voice Note ~
           <p className="link_subtitle">Record a voice note for the couple</p>
         </Link>
-        <Link
-          className="link_nav"
-          to="https://weduploader.com/upload/O0H3empAUgXVCoxQ"
-        >
-          ~ Share Moments ~
-          <p className="link_subtitle">
-            Upload photos and videos of the night (External Site)
-          </p>
+        <Link className="link_nav" to="moments">
+          ~ Revisit the Moments ~
+          <p className="link_subtitle">Photos and memories of the night</p>
         </Link>
         <Link className="link_nav" to="faqs">
           ~ FAQs ~<p className="link_subtitle">Frequently asked questions</p>

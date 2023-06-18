@@ -3,12 +3,14 @@ import ErrorPage from "./ErrorPage";
 import Faqs from "./routes/Faqs";
 import Home from "./routes/Home";
 import VoiceBox from "./routes/VoiceBox";
+import Moments from "./routes/Moments";
 
 function App() {
   const router = createBrowserRouter([
     { path: "/", element: <Home />, errorElement: <ErrorPage /> },
     { path: "/voice-box", element: <VoiceBox /> },
     { path: "/faqs", element: <Faqs /> },
+    { path: "/moments", element: <Moments /> },
   ]);
   return (
     <div className="App">

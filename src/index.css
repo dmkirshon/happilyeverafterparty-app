@@ -440,3 +440,38 @@ button {
     font-size: 1rem;
   }
 }
+
+/* Moments page */
+
+.moments_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--plain-font);
+  padding-top: 25vh;
+}
+
+.moments_header {
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.moments_title {
+  font-family: var(--fancy-font);
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+
+.moments_gallery {
+}
+
+/* Photo Gallery */
+
+.photo-gallery_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
+}

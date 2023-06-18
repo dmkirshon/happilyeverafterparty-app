@@ -1,7 +1,7 @@
 import { useAudioRecorder } from "react-audio-voice-recorder";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import app from "../firebaseConfig";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 interface VoiceRecordProps {
   name: string;
