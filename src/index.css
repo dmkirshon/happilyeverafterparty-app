@@ -68,6 +68,18 @@ button {
   cursor: pointer;
 }
 
+dialog {
+  padding: 0;
+  margin: 0;
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+img {
+  user-select: none;
+}
+
 @media only screen and (max-width: 900px) {
   button {
     padding: 0.5rem;
@@ -78,7 +90,6 @@ button {
 /* App style  */
 
 .App {
-  min-width: 100vw;
   min-height: 100vh;
   display: flex;
   background-color: black;
@@ -86,6 +97,17 @@ button {
   align-items: center;
   flex-direction: column;
   overflow: clip;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .background_top {
@@ -463,9 +485,22 @@ button {
   padding-bottom: 1rem;
 }
 
-.moments_gallery {
+.moments_dialog {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
+.moments_dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dialog_img {
+  width: 60vw;
+  height: auto;
+}
 /* Photo Gallery */
 
 .photo-gallery_wrapper {

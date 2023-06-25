@@ -1,5 +1,4 @@
 import { StorageReference } from "firebase/storage";
-import { useRef, useState } from "react";
 import {
   LazyLoadImage,
   ScrollPosition,
@@ -14,18 +13,14 @@ interface ImageProp {
 interface PhotoGalleryProps {
   images: Array<ImageProp>;
   scrollPosition: ScrollPosition;
+  handleClick: (e: React.MouseEvent<HTMLImageElement>) => void;
 }
 
-const PhotoGallery = ({ images, scrollPosition }: PhotoGalleryProps) => {
-  const dialogRef = useRef<HTMLDialogElement>(null);
-
-  const [dialogImage, setDialogImage] = useState<string>("");
-
-  const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
-    setDialogImage(e.currentTarget.src);
-    dialogRef.current?.showModal();
-  };
-
+const PhotoGallery = ({
+  images,
+  scrollPosition,
+  handleClick,
+}: PhotoGalleryProps) => {
   return (
     <div className="photo-gallery_wrapper">
       {images.map((image, index) => {
@@ -41,10 +36,6 @@ const PhotoGallery = ({ images, scrollPosition }: PhotoGalleryProps) => {
           />
         );
       })}
-
-      <dialog ref={dialogRef} onClick={() => dialogRef.current?.close()}>
-        <img alt="" src={dialogImage}></img>
-      </dialog>
     </div>
   );
 };
